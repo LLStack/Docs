@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安全组设置 | LLStack</title>
+    <meta name="description" content="LLStack - 基于(Open)LiteSpeed的一站式高性能PHP网站解决方案/一键包，这是一款提供便捷、纯粹的 (Open)LiteSpeed+PHP+MySQL 运行环境的一键包。">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    <meta property="og:site_name" content="LLStack"><meta property="og:title" content="安全组设置"><meta property="og:type" content="website"><meta property="og:url" content="/lsws/others/Security-group.html"><meta name="twitter:title" content="安全组设置"><meta name="twitter:url" content="/lsws/others/Security-group.html"><meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/assets/css/0.styles.2cd38edf.css" as="style"><link rel="preload" href="/assets/js/app.a453011c.js" as="script"><link rel="preload" href="/assets/js/2.25f4805c.js" as="script"><link rel="preload" href="/assets/js/17.a20723ba.js" as="script"><link rel="preload" href="/assets/js/3.a091ac96.js" as="script"><link rel="prefetch" href="/assets/js/10.2d50d411.js"><link rel="prefetch" href="/assets/js/11.6d388fbf.js"><link rel="prefetch" href="/assets/js/12.fac933d0.js"><link rel="prefetch" href="/assets/js/13.d814101e.js"><link rel="prefetch" href="/assets/js/14.7b33a2eb.js"><link rel="prefetch" href="/assets/js/15.14cea6b4.js"><link rel="prefetch" href="/assets/js/16.340aad1b.js"><link rel="prefetch" href="/assets/js/18.f57d8763.js"><link rel="prefetch" href="/assets/js/19.c67a6399.js"><link rel="prefetch" href="/assets/js/20.53ed802f.js"><link rel="prefetch" href="/assets/js/21.ab1b9cff.js"><link rel="prefetch" href="/assets/js/22.73d55546.js"><link rel="prefetch" href="/assets/js/23.cb687969.js"><link rel="prefetch" href="/assets/js/24.cf1bbc9f.js"><link rel="prefetch" href="/assets/js/25.bce64921.js"><link rel="prefetch" href="/assets/js/26.244f6f63.js"><link rel="prefetch" href="/assets/js/27.8da6a08a.js"><link rel="prefetch" href="/assets/js/28.7e08cc2c.js"><link rel="prefetch" href="/assets/js/29.91b38d56.js"><link rel="prefetch" href="/assets/js/30.85a145be.js"><link rel="prefetch" href="/assets/js/31.0bc49440.js"><link rel="prefetch" href="/assets/js/32.4561f71a.js"><link rel="prefetch" href="/assets/js/33.fa23f891.js"><link rel="prefetch" href="/assets/js/34.caa69819.js"><link rel="prefetch" href="/assets/js/35.b3fd7090.js"><link rel="prefetch" href="/assets/js/36.9804a01f.js"><link rel="prefetch" href="/assets/js/37.376cd81a.js"><link rel="prefetch" href="/assets/js/4.c68e79bd.js"><link rel="prefetch" href="/assets/js/5.351f1ee0.js"><link rel="prefetch" href="/assets/js/6.8d32e322.js"><link rel="prefetch" href="/assets/js/7.7c92cc73.js"><link rel="prefetch" href="/assets/js/8.59769d2e.js"><link rel="prefetch" href="/assets/js/9.2d97bbea.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2cd38edf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">LLStack</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装" class="dropdown-title"><span class="title">安装</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ols/" class="nav-link">
+  OLStack
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/install/" class="nav-link">
+  LLStack
+</a></li></ul></div></div><div class="nav-item"><a href="/vhost/" class="nav-link">
+  虚拟主机管理
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OLS组件管理" class="dropdown-title"><span class="title">OLS组件管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ols/openlitespeed/" class="nav-link">
+  OpenLiteSpeed
+</a></li><li class="dropdown-item"><!----> <a href="/ols/php/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/ols/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/ols/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LSWS组件管理" class="dropdown-title"><span class="title">LSWS组件管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lsws/LiteSpeed/" class="nav-link">
+  LiteSpeed
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/php/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他设置" class="dropdown-title"><span class="title">其他设置</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/firewall.html" class="nav-link">
+  防火墙
+</a></li><li class="dropdown-item"><!----> <a href="/others/Security-group.html" class="nav-link">
+  安全组
+</a></li><li class="dropdown-item"><!----> <a href="/others/fdisk.html" class="nav-link">
+  磁盘挂载
+</a></li></ul></div></div><div class="nav-item"><a href="/old/v1/" class="nav-link">
+  老版LSWS说明书
+</a></div> <a href="https://github.com/LLStack" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="安装" class="dropdown-title"><span class="title">安装</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ols/" class="nav-link">
+  OLStack
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/install/" class="nav-link">
+  LLStack
+</a></li></ul></div></div><div class="nav-item"><a href="/vhost/" class="nav-link">
+  虚拟主机管理
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OLS组件管理" class="dropdown-title"><span class="title">OLS组件管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ols/openlitespeed/" class="nav-link">
+  OpenLiteSpeed
+</a></li><li class="dropdown-item"><!----> <a href="/ols/php/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/ols/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/ols/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LSWS组件管理" class="dropdown-title"><span class="title">LSWS组件管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lsws/LiteSpeed/" class="nav-link">
+  LiteSpeed
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/php/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/lsws/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他设置" class="dropdown-title"><span class="title">其他设置</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/firewall.html" class="nav-link">
+  防火墙
+</a></li><li class="dropdown-item"><!----> <a href="/others/Security-group.html" class="nav-link">
+  安全组
+</a></li><li class="dropdown-item"><!----> <a href="/others/fdisk.html" class="nav-link">
+  磁盘挂载
+</a></li></ul></div></div><div class="nav-item"><a href="/old/v1/" class="nav-link">
+  老版LSWS说明书
+</a></div> <a href="https://github.com/LLStack" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>安全组设置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lsws/others/Security-group.html#安全组设置教程" class="sidebar-link">安全组设置教程</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lsws/others/Security-group.html#llstack-需要开放的端口" class="sidebar-link">LLStack 需要开放的端口</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="安全组设置">安全组设置</h1> <p>云服务器都会一层最外面的安全组设置，作用同防火墙类似，所以我们不要忘记开放安全组的相应端口，以避免服务无法正常使用。</p> <h2 id="安全组设置教程">安全组设置教程</h2> <p>阿里云：https://help.aliyun.com/document_detail/25475.html</p> <p>腾讯云：https://cloud.tencent.com/document/product/213/2502</p> <p>华为云：https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0030878383.html</p> <p>百度云：https://cloud.baidu.com/doc/BCC/GettingStarted/2D.5C.E7.AE.A1.E7.90.86.E5.AE.89.E5.85.A8.E7.BB.84.html</p> <h2 id="llstack-需要开放的端口">LLStack 需要开放的端口</h2> <table><thead><tr><th style="text-align:center;">服务器名称</th> <th style="text-align:center;">开放端口</th> <th style="text-align:center;">推荐开放ip</th> <th style="text-align:center;">备注</th></tr></thead> <tbody><tr><td style="text-align:center;">HTTP</td> <td style="text-align:center;">80</td> <td style="text-align:center;">0.0.0.0/0  ::/0</td> <td style="text-align:center;"></td></tr> <tr><td style="text-align:center;">HTTPS</td> <td style="text-align:center;">443</td> <td style="text-align:center;">0.0.0.0/0  ::/0</td> <td style="text-align:center;"></td></tr> <tr><td style="text-align:center;">LiteSpeed 控制台</td> <td style="text-align:center;">7080</td> <td style="text-align:center;">自己的ip</td> <td style="text-align:center;">建议将默认的7080更换为自定义端口</td></tr> <tr><td style="text-align:center;">SSH</td> <td style="text-align:center;">22</td> <td style="text-align:center;">自己的ip</td> <td style="text-align:center;">建议将默认的22更换为自定义端口</td></tr> <tr><td style="text-align:center;">MySQL</td> <td style="text-align:center;">3306</td> <td style="text-align:center;">服务器内网IP</td> <td style="text-align:center;">站库分离时使用，若不分离无需开启</td></tr> <tr><td style="text-align:center;">Redis</td> <td style="text-align:center;">6379</td> <td style="text-align:center;">服务器内网IP</td> <td style="text-align:center;">站库分离时使用，若不分离无需开启</td></tr></tbody></table> <p>服务器内部还有 Firewall 或者 iptables 这样的软件，设置教程请参考：<strong><a href="/lsws/others/firewall.html">防火墙设置</a></strong></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com//LLStack/Docs/edit/master/lsws/others/Security-group.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.a453011c.js" defer></script><script src="/assets/js/2.25f4805c.js" defer></script><script src="/assets/js/17.a20723ba.js" defer></script><script src="/assets/js/3.a091ac96.js" defer></script>
+  </body>
+</html>
