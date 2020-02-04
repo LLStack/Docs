@@ -29,7 +29,7 @@ module.exports = {
     { text: '安全组', link: '/others/Security-group.html' },
     { text: '磁盘挂载', link: '/others/fdisk.html' }]
     },
-    { text: '老版LSWS说明书', link: '/old/v1/' }
+    { text: '老版LSWS说明书', link: 'https://old-v0.llstack.com/' }
   ],
   sidebar: {
     '/vhost/': getvhostidebar('虚拟主机管理', 'HTTPS管理'),
