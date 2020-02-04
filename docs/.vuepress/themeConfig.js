@@ -40,6 +40,7 @@ module.exports = {
     repo: 'https://github.com/LLStack',
     repoLabel: '查看源码',
     docsRepo: '/LLStack/Docs',
+    docsDir: 'docs',
     editLinks: true,
     editLinkText: '帮助我们改善此页面！'
 }
