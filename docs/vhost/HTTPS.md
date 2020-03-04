@@ -2,13 +2,45 @@
 
 ## OLStack - OLS 版本
 
-首先得确保相关域名的虚拟主机已经创建，并且解析已经做对。 将使用 CertBot 自动创建 Let's Encrypt 免费SSL证书。
+### 配置SSL证书
 
-OLS 版本采用校本化，更加方便。
+首先得确保相关域名的虚拟主机已经创建，并且解析已经做对。 将使用 ACME 自动创建 Let's Encrypt 免费SSL证书。
+
+#### 安装ACME
+
+仅 **第一次** 运行需要安装ACME，带电子邮件通知运行：
 
 ```bash
-./bin/cert.sh <your_domain.com>
+./bin/acme.sh --install -email <EMAIL_ADDR>
 ```
+
+例如：
+
+```bash
+./bin/acme.sh --install -email cert@mf8.biz
+```
+
+不需要电子邮件通知运行：
+
+```
+./bin/acme.sh --install --no-email
+```
+
+#### 申请证书
+
+在此命令中使用根域名，不需要填写 `www.` 会自动添加`www.`：
+
+```
+./bin/acme.sh -domain <yourdomain.com>
+```
+
+例如：
+
+```bash
+./bin/acme.sh -domain mf8.biz
+```
+
+则会自动签发` www.mf8.biz` 和 `mf8.biz` 两个证书
 
 ## LLStack - LSWS 版
 
