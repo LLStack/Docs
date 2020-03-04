@@ -12,7 +12,8 @@ module.exports = {
       { text: 'OpenLiteSpeed', link: '/ols/openlitespeed/' },
       { text: 'PHP', link: '/ols/php/' },
       { text: 'MySQL', link: '/ols/mysql/' },
-      { text: 'Redis', link: '/ols/redis/' }
+      { text: 'Redis', link: '/ols/redis/' },
+      { text: 'Dockerfiles', link: '/ols/dockerfiles/' }
     ]
     },
     { text: 'LSWS组件管理',

@@ -17,11 +17,9 @@ PHP7.0开始 Ubuntu 版的 LSPHP 提供了较为丰富的扩展，但是没有�
 
 为什么不默认安装呢？ 因为需要参与编译，安装一系列包会使得 Docker 镜像变得非常大，所以默认不安装。
 
-```md
 ::: danger 警告
 下面版本是 53 为例，其他版本请甄别版本号。
 :::
-```
 
 运行下面语句进入 LiteSpeed 容器内部
 ```bash
@@ -29,26 +27,24 @@ docker exec -it litespeed /bin/sh
 ```
 
 ```bash
-apt install pkg-config build-essential -y ##安装构建依赖包
+apt install pkg-config build-essential autoconf -y ##安装构建依赖包
 apt install lsphp73-pear ## 安装 PECL 支持，注意版本号
 /usr/local/lsws/lsphp73/bin/pecl install swoole
 echo "extension=swoole.so" >> /usr/local/lsws/lsphp73/etc/php/7.3/mods-available/swoole.ini
 /usr/local/lsws/bin/lswsctrl restart
 ```
 
-### PHP5.3~5.6 安装
+### PHP5.5~5.6 安装
 
 #### OPCache 安装示例
 
-PHP5.3～5.6 版本，不提供像 OPCache 这样的字节码缓存扩展，那我们可以自行进行安装。
+PHP5.5～5.6 版本，不提供像 OPCache 这样的字节码缓存扩展，那我们可以自行进行安装。
 
 为什么不默认安装呢？ 因为需要参与编译，安装一系列包会使得 Docker 镜像变得非常大，所以默认不安装。
 
-```md
 ::: danger 警告
-下面版本是 53 为例，其他版本请甄别版本号。
+下面版本是 55 为例，其他版本请甄别版本号。
 :::
-```
 
 运行下面语句进入 LiteSpeed 容器内部
 ```bash
@@ -56,16 +52,17 @@ docker exec -it litespeed /bin/sh
 ```
 
 ```bash
-apt install pkg-config build-essential -y ##安装构建依赖包
+apt install pkg-config build-essential autoconf -y ##安装构建依赖包
+apt install lsphp55-dev ##安装开发工具包
 mkdir -p ~/tmp
 pushd ~/tmp
 git clone https://github.com/LLStack/PHP5-OPCache.git
 cd PHP5-OPCache
-cd php53 ##不同版本进不同目录
-  /usr/local/lsws/lsphp53/bin/phpize
-  ./configure --with-php-config=/usr/local/lsws/lsphp53/bin/php-config
+cd php55 ##不同版本进不同目录
+  /usr/local/lsws/lsphp55/bin/phpize
+  ./configure --with-php-config=/usr/local/lsws/lsphp55/bin/php-config
   make && make install
-  echo "extension=opcache.so" >> /usr/local/lsws/lsphp53/etc/conf.d/opcache.ini ##注意不同版本路径不一样，下面有提供路径说明
+  echo "zend_extension=opcache.so" >> /usr/local/lsws/lsphp55/etc/conf.d/opcache.ini ##注意不同版本路径不一样，下面有提供路径说明
   /usr/local/lsws/bin/lswsctrl restart ## 重启 OLS 
 popd
 ```

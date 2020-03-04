@@ -1,19 +1,18 @@
----
-title: OLStack 使用手册
-sidebar: auto
-sidebarDepth: 2
----
-# OLStack 使用手册
+# 介绍
 
-## 介绍
+官方支持网站：https://www.llstack.com/ols/
 
 **OLStack 社区容器版**，是基于 Docker 容器化编排的 OpenLiteSpeed 环境。性能比Nginx更胜一筹，基本兼容 Apache HTTPD 生态，主要是不支持自动加载 .htaccss 文件，该版本对操作系统环境没有限制，未来可以应用到非常多的场景中。
 
+OpenLiteSpeed 是 LiteSpeed EnterPrise 的社区版本，相较 Nginx 很多扩展如 Brotli、nginx*-*cache*-*purge 等扩展，会因为更新的不及时导致对最新Stable版本的不支持，同时也没有企业级的保障。 而 OpenLiteSpeed 的组件有官方进行主要维护和更新，提供商用企业级的体验。
+
+在性能上，LiteSpeed Tech 提供的 BenchMark 中，在 WordPress、Joomla、OpenCart、ModSecurity、小型静态文件、HTTP/2、HTTP/3 的测试上都比 Apache HTTPD 和 Nginx 有这更好的表现，这不仅仅是跑个 Hello World 而是进行一个完整的测试。
+
 这是 [litespeedtech](https://github.com/litespeedtech)/**[ols-docker-env](https://github.com/litespeedtech/ols-docker-env)** 的一个复克（Fork）。
 
-## 安装环境
+# 安装环境
 
-### 国内服务器准备环境
+## 国内服务器准备环境
 
 一、安装 Docker 环境，已有可以跳过
 
@@ -36,7 +35,7 @@ git clone https://gitee.com/LLStack/OLStack.git
 cd OLStack
 ```
 
-### 海外服务器准备环境
+## 海外服务器准备环境
 
 一、安装 Docker 环境，已有可以跳过
 
@@ -44,10 +43,10 @@ cd OLStack
 curl -s https://get.docker.com | sudo sh
 ```
 
-二、安装 Docker-Compose 环境，其中`1.25.3`  可以根据 [**最新版本**](https://github.com/docker/compose/releases) 修改，已有可以跳过
+二、安装 Docker-Compose 环境，其中`1.25.4`  可以根据 [**最新版本**](https://github.com/docker/compose/releases) 修改，已有可以跳过
 
 ```bash
-curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
 
@@ -59,7 +58,7 @@ git clone https://github.com/LLStack/OLStack.git
 cd OLStack
 ```
 
-### 编辑配置文件
+## 编辑配置文件
 
 四、编辑 `.env` 和 `docker-compose.yml`文件：
 
@@ -91,9 +90,9 @@ docker-compose stop ## 停止容器运行
 docker-compose down ## 停止和删除所有容器
 ```
 
-## 配置说明
+# 配置说明
 
-### .ENV配置
+## .ENV配置
 
  `.env` 文件包括了对一些版本的定义，由于是 `.` 开头的文件，可能在部分电脑显示中是隐藏的，所以需要开放显示隐藏的文件。
 
@@ -108,10 +107,12 @@ TimeZone=Asia/Shanghai
 **二、OpenLiteSpeed 版本**，目前 OLS 提供了 1.6.X 和 1.5.X 两个版本，未来可能提供更多的版本。
 
 ```bash
-LITESPEED=ols1.6
+LITESPEED=ols1.6.9
 ```
 
-可供修改的选项：`ols1.6` 、`ols1.5`
+可供修改的选项：`ols1.6.9` 、`ols1.5.11`以及以上版本，版本查看：
+
+https://openlitespeed.org/release-log/
 
 **三、PHP版本**，由 LiteSpeed 官方提供支持的 LSPHP 版本，和很多虚拟主机使用的企业版是一样的。
 
@@ -177,27 +178,13 @@ REDIS_VERSION=5.0-alpine
 
 可供修改的选项：`6.0-rc-alpine`、`5.0-alpine`、`4.0-alpine`、`3.2-alpine`、`2.8`
 
-**八、MEMCACHED_VERSION，** 配置 Memcached 的版本。 **如果要使用，请把最前面的 `#` 去掉**
-
-```bash
-#MEMCACHED_VERSION=1.5-alpine
-```
-
-可供修改的选项：`1.5-alpine`、`1.4-alpine`
-
-**九、MEMCACHED_CACHE_SIZE，** 配置 Memcached 的缓存大小，根据服务器实际内存情况选择，建议是服务器内存的 1/8。**如果要使用，请把最前面的 `#` 去掉**
-
-```bash
-#MEMCACHED_CACHE_SIZE=128
-```
-
-**十、DOMAIN**，默认配置的域名，可以保持默认，也可以输入为自己的默认域名，建议后面新建主机。
+**八、DOMAIN**，默认配置的域名，可以保持默认，也可以输入为自己的默认域名，建议后面新建主机。
 
 ```bash
 DOMAIN=localhost
 ```
 
-### docker-compose.yml 配置
+## docker-compose.yml 配置
 
 `docker-compose.yml` 模板文件是使用 Docker Compose 的核心，涉及到的指令关键字也比较多。
 
@@ -205,34 +192,21 @@ DOMAIN=localhost
 
 这里举例几个 OLStack 的修改方案：
 
-**一、安装预装软件**
-
-```yaml {6}
-  litespeed:
-    build:                                                                                                             
-      context: ./Dockerfile/${LITESPEED}/${PHPVER}/                                                                        
-      args:
-        #extensions: lsphp72 lsphp72-common lsphp72-mysql lsphp72-json                                                                                    
-        extensions:
-```
-
-`extensions:` 后可以跟 http://rpms.litespeedtech.com/ 中提供的 LSPHP 软件，和 Ubuntu 默认提供的软件。
-
-**二、挂载目录**
+**一、挂载目录**
 
 ```yaml
     volumes:
-        - ./Configfile/lsws/conf:/usr/local/lsws/conf
-        - ./Configfile/lsws/admin-conf:/usr/local/lsws/admin/conf
+        - ./config/lsws/conf:/usr/local/lsws/conf
+        - ./config/lsws/admin-conf:/usr/local/lsws/admin/conf
         - ./bin/container:/usr/local/bin
         - ./sites:/var/www/vhosts/
-        - ./certs:/etc/letsencrypt/
+        - ./acme:/root/.acme.sh/
         - ./logs/lsws/:/usr/local/lsws/logs/
 ```
 
 `:`前的是宿主机（这台服务器）的对应目录，这里使用相对路径。`:`后的是容器主机所对应的目录，如果有其他的目录挂载需求可以修改`volumes:`进行挂载。
 
-**三、开放的端口**
+二、开放的端口**
 
 ```yaml
     ports:
@@ -250,7 +224,7 @@ DOMAIN=localhost
 
 安全起见，可以将`- 7080:7080` 修改为更安全的例如：`- 27080:7080` 这样的非默认端口，减少被安全攻击的可能。
 
-**四、启动带#的功能**
+**三、启动带#的功能**
 
 默认绿的带 `#` 的都是不启用的功能：
 
@@ -272,17 +246,17 @@ DOMAIN=localhost
 adminer、phpmyadmin、phpredisadmin 在不使用的时候，建议关闭。
 :::
 
-## 目录结构
+# 目录结构
 
 ### LiteSpeed 容器
 
 ```yaml
     volumes:
-        - ./Configfile/lsws/conf:/usr/local/lsws/conf  ## OLS的配置文件目录
-        - ./Configfile/lsws/admin-conf:/usr/local/lsws/admin/conf  ## OLS的管理控制台目录
+        - ./config/lsws/conf:/usr/local/lsws/conf  ## OLS的配置文件目录
+        - ./config/lsws/admin-conf:/usr/local/lsws/admin/conf  ## OLS的管理控制台目录
         - ./bin/container:/usr/local/bin  ## 相关工具文件
         - ./sites:/var/www/vhosts/  ## 虚拟主机存放的位置
-        - ./certs:/etc/letsencrypt/  ## Let's Encrypt 生成的证书存放地址
+        - ./acme:/root/.acme.sh/  ## Let's Encrypt 生成的证书存放地址
         - ./logs/lsws/:/usr/local/lsws/logs/  ##OLS 的日志地址
 ```
 
@@ -307,18 +281,18 @@ adminer、phpmyadmin、phpredisadmin 在不使用的时候，建议关闭。
 
 ```yaml
     volumes:
-      - ./Configfile/redis/redis.conf:/etc/redis.conf
+      - ./config/redis/redis.conf:/etc/redis.conf
       - ./data/redis/data:/data
       - ./logs/redis/:/var/log/redis/
 ```
 
-`- ./Configfile/redis/redis.conf:/etc/redis.conf` 配置文件，有中文注释
+`- ./config/redis/redis.conf:/etc/redis.conf` 配置文件，有中文注释
 
 ` - ./data/redis/data:/data` 持久化物理文件目录
 
 `- ./logs/redis/:/var/log/redis/` Redis-Server日志目录
 
-## 使用说明
+# 使用说明
 
 ::: warning 提示
 使用下面的命令好，首先得进入`OLStack` 目录
@@ -374,21 +348,81 @@ bash bin/database.sh -domain <your_domain.com> -user user_name -password my_pass
 
 在 Docker 环境中，因为数据库和执行语言是分开运行的，所以并不是在同一台“服务器”当中，自然无法使用本地连接地址。我们需要使用 `mysql` 来进行代替。
 
+# 使用说明
+
 ### 配置SSL证书
 
-首先得确保相关域名的虚拟主机已经创建，并且解析已经做对。 将使用 CertBot 自动创建 Let's Encrypt 免费SSL证书。
+SSL 证书通过 ACME 申请 Let's Encrypt 免费证书实现，首次运行需要安装 ACME。
+
+#### 安装ACME
+
+仅 **第一次** 运行需要安装ACME，带电子邮件通知运行：
 
 ```bash
-./bin/cert.sh <your_domain.com>
+./bin/acme.sh --install -email <EMAIL_ADDR>
 ```
 
-### 更新版本
+例如：
+
+```bash
+./bin/acme.sh --install -email cert@mf8.biz
+```
+
+不需要电子邮件通知运行：
+
+```
+./bin/acme.sh --install --no-email
+```
+
+#### 申请证书
+
+在此命令中使用根域名，不需要填写 `www.` 会自动添加`www.`：
+
+```
+./bin/acme.sh -domain <yourdomain.com>
+```
+
+例如：
+
+```bash
+./bin/acme.sh -domain mf8.biz
+```
+
+则会自动签发` www.mf8.biz` 和 `mf8.biz` 两个证书
+
+### 更新OLS版本
 
 要将 OpenLiteSpeed 升级到最新的稳定版本，请运行
 
 ```bash
 bash bin/webadmin.sh -lsup
 ```
+
+### 安装WAF防火墙
+
+使用 ModSecurity 实现防火墙WAF功能：
+
+Web服务器上启用WAF ：
+
+```bash
+bash bin/webadmin.sh -modsec enable
+```
+
+Web服务器上禁用WAF ：
+
+```
+bash bin/webadmin.sh -modsec disable
+```
+
+### phpMyAdmin
+
+访问地址：
+
+http://yourip:8080
+
+http://yourip:8443
+
+默认用户名是`root`，密码与您在`.env`文件中提供的密码相同。
 
 ### 进入容器内部
 
@@ -404,9 +438,9 @@ docker exec -it redis /bin/sh # 进入 Redis Server容器
 docker exec -it <container_name> /bin/sh 
 ```
 
-## 容器教程
+# 容器教程
 
-### Docker 使用教程
+## Docker 使用教程
 
 前面 docker run 后面 `–name litespeed` 中的 `litespeed` 为 `$name`，其代表容器识别符，也就是 `$name=litespeed`。
 
@@ -452,7 +486,7 @@ docker rm $name
 docker stats --no-stream
 ```
 
-### Docker-Compose 使用教程
+## Docker-Compose 使用教程
 
 ::: warning 提示
 首先得进入有 `docker-compose.yml` 模板文件的目录。
@@ -471,3 +505,8 @@ docker-compose down ## 停止和删除所有容器
 docker-compose up --build
 ```
 
+# 其他链接
+
+[LLStack OLStack 社区版容器镜像](https://github.com/LLStack/OLStack-Dockerfiles)
+
+[米饭粑](https://www.mf8.biz/)
