@@ -5,7 +5,7 @@ heroText: LLStack & OLStack
 tagline: 轻量、高性能的 (Open)LiteSpeed+PHP+MySQL 运行环境
 actionText: 快速上手 →
 actionLink: /start/
-footer: MIT Licensed | 浙ICP备15006212号-6 | Copyright © 2019-present LLStack.com
+footer: MIT Licensed | Copyright © 2019-present LLStack.com
 meta:
   - name: description
     content: LLStack - 基于(Open)LiteSpeed的一站式高性能PHP网站解决方案/一键包，这是一款提供便捷、纯粹的 (Open)LiteSpeed+PHP+MySQL 运行环境的一键包。以 (Open)LiteSpeed Native 原生环境为基础，而不必安装过分其他厚重冗杂的软件环境。提供图形化配置面板，新手编辑配置再不用对着黑底白字的一串英文发愁。包括但不限于 LSCache、HTTP/3（QUIC)、TLS1.3、PageSpeed、Brotli 等性能级扩展开箱即用。
@@ -63,3 +63,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ivmm/LLStack/master/instal
 **友情链接：**
 
 [米饭粑](https://www.mf8.biz/)
+
+**友情链接：**
+
+[米饭粑](https://www.mf8.biz/)
+
+**备案：**
+[浙ICP备15006212号-6](http://beian.miit.gov.cn/)
