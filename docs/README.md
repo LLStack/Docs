@@ -67,6 +67,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ivmm/LLStack/master/instal
 **友情链接：**
 
 [米饭粑](https://www.mf8.biz/)
-
-**备案：**
-[浙ICP备15006212号-6](http://beian.miit.gov.cn/)
