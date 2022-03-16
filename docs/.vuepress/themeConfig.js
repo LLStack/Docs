@@ -43,12 +43,12 @@ module.exports = {
     docsRepo: '/LLStack/Docs',
     docsDir: 'docs',
     editLinks: true,
-    editLinkText: '帮助我们改善此页面！'
-      // 备案
+    editLinkText: '帮助我们改善此页面！',
+     // 备案
     record: '浙ICP备15006212号-6',
-    recordLink: 'https://beian.miit.gov.cn/,
-    //cyberSecurityRecord: '公安部备案文案',
-    //cyberSecurityLink: '公安部备案指向链接',
+    recordLink: 'https://beian.miit.gov.cn/
+    // cyberSecurityRecord: '公安部备案文案',
+    // cyberSecurityLink: '公安部备案指向链接',
 }
 
 function getvhostidebar (groupA, groupB) {
