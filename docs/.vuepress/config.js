@@ -54,7 +54,13 @@ module.exports = {
   // theme: 'vuepress-theme-xx'
 
   // 为当前的主题提供一些配置，这些选项依赖于你正在使用的主题。
-  themeConfig: themeConfig,
+  themeConfig: {
+    // 备案
+    record: '浙ICP备15006212号-6',
+    recordLink: 'https://beian.miit.gov.cn/,
+    //cyberSecurityRecord: '公安部备案文案',
+    //cyberSecurityLink: '公安部备案指向链接',
+  }
 
   // plugins:使用一个插件。
   plugins: [
