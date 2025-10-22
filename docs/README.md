@@ -62,4 +62,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ivmm/LLStack/master/instal
 
 **友情链接：**
 
-[米饭粑](https://www.mf8.biz/)  ｜ [MuleRun](https://mulerun.com/) 
+[Debian.Club](https://debian.club) ｜ [hestiacp.cn](https://hestiacp.cn) ｜ [PortCyou](https://portcyou.com) ｜ [CloudFan](https://cloud.fan) ｜ [MuleRun](https://mulerun.com) ｜ [AlmaLinuxCN](https://www.almalinux.com.cn) ｜ [P.Cafe](https://p.cafe) ｜ [RankFan](https://www.rank.fan) ｜ [ClawCloud Run](https://run.claw.cloud) ｜ [APP on ARM](https://www.apponarm.com) ｜ [FreeHost](https://freehost.work) ｜ [MF8](https://mf8.biz) ｜ [AAT.ee](https://aat.ee) ｜ [II.Pe](https://ii.pe)
