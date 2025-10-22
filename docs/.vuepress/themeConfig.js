@@ -43,7 +43,7 @@ const sidebar = {
   '/lsws/LiteSpeed/': getLiteSpeedSidebar('介绍', '激活', 'WAF'),
 }
 
-module.exports = {
+const themeConfig = {
   navbar,
   sidebar,
   repo: 'https://github.com/LLStack',
@@ -54,6 +54,8 @@ module.exports = {
   record: '浙ICP备15006212号-6',
   recordLink: 'https://beian.miit.gov.cn/',
 }
+
+export default themeConfig
 
 function getVhostSidebar(groupA, groupB) {
   return [

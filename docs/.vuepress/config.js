@@ -1,14 +1,15 @@
-const { defineUserConfig, defaultTheme } = require('vuepress')
-const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
-const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
-const { pwaPlugin } = require('@vuepress/plugin-pwa')
-const { pwaPopupPlugin } = require('@vuepress/plugin-pwa-popup')
-const themeOptions = require('./themeConfig.js')
+import { defineUserConfig, defaultTheme } from 'vuepress'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+import { pwaPlugin } from '@vuepress/plugin-pwa'
+import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
+import themeOptions from './themeConfig.js'
 
-module.exports = defineUserConfig({
+export default defineUserConfig({
   base: '/',
   title: 'LLStack',
-  description: 'LLStack - 基于(Open)LiteSpeed的一站式高性能PHP网站解决方案/一键包，这是一款提供便捷、纯粹的 (Open)LiteSpeed+PHP+MySQL 运行环境的一键包。',
+  description:
+    'LLStack - 基于(Open)LiteSpeed的一站式高性能PHP网站解决方案/一键包，这是一款提供便捷、纯粹的 (Open)LiteSpeed+PHP+MySQL 运行环境的一键包。',
   host: '0.0.0.0',
   port: 8080,
   theme: defaultTheme(themeOptions),
