@@ -22,8 +22,8 @@ export default defineUserConfig({
   },
   plugins: [
     pwaPlugin({
-      serviceWorker: true,
       skipWaiting: true,
+      clientsClaim: true,
     }),
     pwaPopupPlugin({
       locales: {
