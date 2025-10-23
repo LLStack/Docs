@@ -1,0 +1,28 @@
+/* Windows-friendly typography and UI tweaks */
+
+html, body
+  font-family 'Segoe UI', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Source Han Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', Arial, sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+/* Code font stack: prefer Consolas on Windows */
+pre, code, kbd, samp, .content pre, .content code
+  font-family Consolas, 'Courier New', Menlo, Monaco, 'Source Code Pro', monospace
+
+/* Slightly increase line-height for better rendering on Windows */
+.content
+  line-height 1.75
+
+/* Adjust navbar and sidebar spacing for Windows system metrics */
+.navbar
+  height 3.25rem
+
+.sidebar
+  font-size 15px
+
+/* Improve contrast for links against Windows default rendering */
+a
+  color #0067C0
+  &:hover
+    color #005aab
+

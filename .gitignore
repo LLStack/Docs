@@ -1,0 +1,34 @@
+########################
+# Node & Package Manager
+########################
+node_modules
+node_modules\.bin\
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+########################
+# VuePress build & caches
+########################
+docs\.vuepress\dist\
+docs\.vuepress\.cache\
+docs\.vuepress\.temp\
+.cache\
+.temp\
+
+########################
+# OS / Editors
+########################
+.DS_Store
+Thumbs.db
+.idea\
+.vscode\
+.history\
+
+########################
+# Misc
+########################
+*.log
+*.swp
+*.swo

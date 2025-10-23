@@ -1,40 +1,39 @@
-const { defineUserConfig, defaultTheme } = require('vuepress')
-const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
-const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
-const { pwaPlugin } = require('@vuepress/plugin-pwa')
-const { pwaPopupPlugin } = require('@vuepress/plugin-pwa-popup')
-const themeOptions = require('./themeConfig.js')
+const themeConfig = require('./themeConfig.js')
 
-module.exports = defineUserConfig({
+module.exports = {
   base: '/',
   title: 'LLStack',
-  description: 'LLStack - 基于(Open)LiteSpeed的一站式高性能PHP网站解决方案/一键包，这是一款提供便捷、纯粹的 (Open)LiteSpeed+PHP+MySQL 运行环境的一键包。',
+  description: 'LLStack - (Open)LiteSpeed + PHP + MySQL 套件的安装与使用文档',
   host: '0.0.0.0',
   port: 8080,
-  theme: defaultTheme(themeOptions),
+  themeConfig,
   markdown: {
     anchor: { permalink: false },
-    headers: { level: [1, 2] },
   },
-  alias: {
-    '@alias': '/',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@alias': '/',
+      },
+    },
   },
   plugins: [
-    pwaPlugin({
-      serviceWorker: true,
-      skipWaiting: true,
-    }),
-    pwaPopupPlugin({
-      locales: {
-        '/': {
+    [
+      '@vuepress/plugin-pwa',
+      {
+        serviceWorker: true,
+        updatePopup: {
           message: '发现新内容可用',
           buttonText: '刷新',
         },
       },
-    }),
-    googleAnalyticsPlugin({
-      id: 'UA-24291982-6',
-    }),
-    backToTopPlugin(),
+    ],
+    [
+      '@vuepress/plugin-google-analytics',
+      {
+        ga: 'UA-24291982-6',
+      },
+    ],
+    '@vuepress/plugin-back-to-top',
   ],
-})
+}
