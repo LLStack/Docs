@@ -36,4 +36,6 @@ module.exports = {
     ],
     '@vuepress/plugin-back-to-top',
   ],
+  // Render custom components globally; FriendLinks shows only on home page
+  globalUIComponents: ['FriendLinks'],
 }

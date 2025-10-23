@@ -26,3 +26,28 @@ a
   &:hover
     color #005aab
 
+/* Friend links grid on home page */
+.friendlinks-wrapper
+  margin-top 2.5rem
+  h3
+    margin 0 0 1rem
+  .friend-links
+    list-style none
+    padding 0
+    margin 0
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(180px, 1fr))
+    grid-gap 12px
+    li
+      margin 0
+    a
+      display block
+      padding 8px 10px
+      border 1px solid $borderColor
+      border-radius 6px
+      background #fff
+      text-decoration none
+      color #0366d6
+      &:hover
+        border-color $accentColor
+        color #005aab
