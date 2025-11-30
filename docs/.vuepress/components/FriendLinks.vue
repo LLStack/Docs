@@ -16,7 +16,7 @@
       <li><a href="https://freehost.work" target="_blank" rel="noopener">FreeHost</a></li>
       <li><a href="https://mf8.biz" target="_blank" rel="noopener">MF8</a></li>
       <li><a href="https://aat.ee" target="_blank" rel="noopener">AAT.ee</a></li>
-      <li><a href="https://ii.pe" target="_blank" rel="noopener">II.Pe</a></li>
+      <li><a href="https://hicyou.com" target="_blank" rel="noopener">Hi Cyou</a></li>
     </ul>
   </div>
   
